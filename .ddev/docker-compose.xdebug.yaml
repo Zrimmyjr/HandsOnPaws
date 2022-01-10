@@ -1,0 +1,11 @@
+# For Linux users; Docker has not yet supported the "host.docker.internal"
+# convention that is used in ddev v0.18.0. But if you add this file as
+# .ddev/docker-compose.xdebug.yaml it should sort that out.
+# Note that the IP address in your environment might not be 172.17.0.1,
+# Find out what address to use with "ifconfig docker0" or "ip addr show docker0 | grep inet"
+version: "3"
+services:
+  web:
+    extra_hosts:
+      # Find out what address to use with "ifconfig docker0" or "ip addr show docker0 | grep inet"
+      - "host.docker.internal:192.168.49.2"
