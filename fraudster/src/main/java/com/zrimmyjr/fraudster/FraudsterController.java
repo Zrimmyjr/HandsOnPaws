@@ -1,0 +1,25 @@
+package com.zrimmyjr.fraudster;
+
+import com.zrimmyjr.clients.fraud.FraudCheckResponse;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
+
+@Slf4j
+@RestController
+@RequestMapping("api/v1/fraudster-check")
+@AllArgsConstructor
+public class FraudsterController {
+
+    private final FraudCheckService fraudCheckService;
+
+    @GetMapping (path = "{customerId}")
+    public FraudCheckResponse isFraudster(
+            @PathVariable("customerId") Integer customerID) {
+
+        boolean isFraudster = fraudCheckService.isFraudster(customerID);
+
+        log.info("fraud check request for customer {}", customerID);
+        return new FraudCheckResponse(isFraudster);
+    }
+}

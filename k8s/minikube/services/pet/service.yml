@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: pet
+spec:
+  selector:
+    app: pet
+  ports:
+    - port: 80
+      targetPort: 8081
+  type: LoadBalancer

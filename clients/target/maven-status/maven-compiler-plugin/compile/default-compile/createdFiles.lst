@@ -1,0 +1,4 @@
+com\zrimmyjr\clients\notification\NotificationRequest.class
+com\zrimmyjr\clients\fraud\FraudClient.class
+com\zrimmyjr\clients\fraud\FraudCheckResponse.class
+com\zrimmyjr\clients\notification\NotificationClient.class

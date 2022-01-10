@@ -1,0 +1,6 @@
+com\zrimmyjr\fraudster\FraudCheckService.class
+com\zrimmyjr\fraudster\FraudCheckHistoryRepository.class
+com\zrimmyjr\fraudster\FraudsterApplication.class
+com\zrimmyjr\fraudster\FraudCheckHistory.class
+com\zrimmyjr\fraudster\FraudCheckHistory$FraudCheckHistoryBuilder.class
+com\zrimmyjr\fraudster\FraudsterController.class

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fraudster
+  labels:
+    app: fraudster
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: fraudster
+      labels:
+        app: fraudster
+    spec:
+      containers:
+        - name: fraudster
+          image: zrimmyjr/fraudster:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8082
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: kube
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: fraudster
